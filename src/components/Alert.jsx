@@ -1,11 +1,13 @@
 import React from "react";
 
-const Alert = () => {
+const Alert = (props) => {
   return (
     <div>
-      <div className="alert alert-primary" role="alert">
-        A simple primary alert—check it out!
+    {props.alert && <div>
+      <div className={`alert alert-${props.alert.type.toLowerCase()} alert-dismissible fade show`} role="alert">
+            <strong>{props.alert.type}!! </strong>{props.alert.message}
       </div>
+    </div>}
     </div>
   );
 };
